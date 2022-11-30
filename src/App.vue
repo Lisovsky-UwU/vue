@@ -1,32 +1,31 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <component :is="layout"></component>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import BaseLayout from '@/views/layouts/BaseLayout'
+import LoginLayout from '@/views/layouts/LoginLayout'
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  components: { BaseLayout, LoginLayout },
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+  }),
+
+  computed: {
+		layout() {
+			if (true) {
+				return 'LoginLayout'
+			}
+			else {
+				return 'BaseLayout'
+			}
+		}
+	},
+};
+</script>
