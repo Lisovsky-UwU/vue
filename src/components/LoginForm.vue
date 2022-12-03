@@ -65,7 +65,8 @@ export default {
 				'login': this.stud_code,
 				'password': this.password,
 			}
-			console.log(user_login_data)
+			this.$store.dispatch('tryLogin', user_login_data)
+			this.os_loading = false
 		},
 	}
 }

@@ -9,10 +9,10 @@ export default {
 			state.token = token
 		},
 
-		outlogin(state) {
+		singOut(state) {
 			localStorage.setItem('Token', '')
 			state.token = ''
-			window.location.reload()
+			// window.location.reload()
 		},
 
 	},

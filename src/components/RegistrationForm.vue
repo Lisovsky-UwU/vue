@@ -23,6 +23,7 @@
 								type="submit"
 								class="mt-5 white--text"
 								:disabled="!valid_step_1"
+								:loading="is_loading"
 							>
 								Далее
 							</v-btn>
@@ -73,6 +74,7 @@
 								type="submit"
 								class="mt-5 ml-3 white--text"
 								:disabled="!valid_step_2"
+								:loading="is_loading"
 							>
 								Далее
 							</v-btn>
@@ -156,6 +158,7 @@
 								type="submit"
 								class="mt-5 ml-3 white--text"
 								:disabled="!valid_step_3 || selected_group == 'Выбрать группу'"
+								:loading="is_loading"
 							>
 								Далее
 							</v-btn>
@@ -172,6 +175,8 @@ import GroupSelector from '@/components/ui/GroupSelector'
 
 export default {
 	data: () => ({
+		is_loading: false,
+
 		valid_step_1: false,
 		valid_step_2: false,
 		valid_step_3: false,
@@ -193,16 +198,28 @@ export default {
 	}),
 	methods: {
 		registrationStep1() {
-			console.log('registrationStep1')
+			this.is_loading = true
+			this.$store.dispatch('checkStudCode', this.stud_code)
+			this.is_loading = false
 			this.registration_step = 2
 		},
 		registrationStep2() {
-			console.log('registrationStep2')
+
 			this.registration_step = 3
 		},
 		registrationStep3() {
-			console.log('registrationStep3')
-			
+			this.is_loading = true
+			const user_data = {
+				'login': this.stud_code,
+				'firstname': this.firstname,
+				'secondname': this.secondname,
+				'patronymic': this.patronymic,
+				'group': this.selected_group,
+				'password': this.password
+			}
+			this.$store.dispatch('registrate', user_data)
+
+			this.is_loading = false
 		},
 		onUpdateGroup(group) {
 			this.selected_group = group
