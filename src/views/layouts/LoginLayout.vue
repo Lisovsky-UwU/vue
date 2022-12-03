@@ -12,10 +12,10 @@
 				<v-row>
 					<v-col align="center">
 						<v-img 
-							src="@/assets/logo.png" 
+							src="@/assets/logo_without_back.png" 
 							visible="logo_visible"
-							max-width="300"
-							max-height="300"
+							max-width="250"
+							max-height="250"
 						/>
 					</v-col>
 				</v-row>
