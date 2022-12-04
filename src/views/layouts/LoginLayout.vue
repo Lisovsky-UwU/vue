@@ -1,47 +1,41 @@
 <template>
-	<div class="back">
-		<v-navigation-drawer
-			fixed
-			right
-			width="350"
-			class="login_nav"
-			permanent
-		>
-		<v-container fill-height>
-			<v-container justify="center">
-				<v-row>
-					<v-col align="center">
-						<v-img 
-							src="@/assets/logo_without_back.png" 
-							visible="logo_visible"
-							max-width="250"
-							max-height="250"
-						/>
-					</v-col>
-				</v-row>
-				<v-tabs
-					v-model="tab" 
-					centered
-					class="mt-5"
-				>
-					<v-tab key="login">
-						Вход
-					</v-tab>
-					<v-tab key="registration">
-						Регистрация
-					</v-tab>
-				</v-tabs>
-				<v-tabs-items v-model="tab">
-					<v-tab-item key="login">
-						<LoginForm/>
-					</v-tab-item>
-					<v-tab-item key="registration">
-						<RegistrationForm/>
-					</v-tab-item>
-				</v-tabs-items>
+	<div class="back_login">
+		<div class="login_div">
+			<v-container fill-height>
+				<v-container justify="center">
+					<v-row>
+						<v-col align="center">
+							<v-img 
+								src="@/assets/logo_without_back.png" 
+								visible="logo_visible"
+								max-width="200"
+								max-height="200"
+							/>
+						</v-col>
+					</v-row>
+					<v-tabs
+						v-model="tab" 
+						centered
+						class="mt-5"
+					>
+						<v-tab key="login">
+							Вход
+						</v-tab>
+						<v-tab key="registration">
+							Регистрация
+						</v-tab>
+					</v-tabs>
+					<v-tabs-items v-model="tab">
+						<v-tab-item key="login">
+							<LoginForm/>
+						</v-tab-item>
+						<v-tab-item key="registration">
+							<RegistrationForm/>
+						</v-tab-item>
+					</v-tabs-items>
+				</v-container>
 			</v-container>
-		</v-container>
-		</v-navigation-drawer>
+		</div>
 	</div>
 </template>
 
@@ -63,7 +57,7 @@ export default {
 </script>
 
 <style>
-.back {
+.back_login {
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -72,7 +66,11 @@ export default {
 	background-image: url("@/assets/login_back.jpg");
 }
 
-.login_nav {
-	background: rgba(255, 234, 13, 0.5);
+.login_div {
+	margin-left: auto;
+	margin-right: 0;
+	max-width: 300px;
+	height: 100%;
+	background: rgba(255, 255, 255, 1);
 }
 </style>
