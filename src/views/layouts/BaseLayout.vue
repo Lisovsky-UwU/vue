@@ -1,25 +1,24 @@
 <template>
   <div class="back_base">
-		<div class="px-13 py-13" style="height: 100%;">
+		<div class="pa-13" style="height: 100%;">
 			<v-row no-gutters style="height: 100%;">
 
-				<v-card max-width="250" min-height="100%" outlined style="position: relative" class="rounded-lg" color="element_background">
+				<v-card width="250" min-height="100%" outlined style="position: relative" class="rounded-lg" color="element_background">
 					<v-card-text>
-						Инфа о пользователе
-						<v-btn @click="$store.commit('singOut')">Выйти</v-btn>
+						<UserMenu/>
 					</v-card-text>
 				</v-card>				
 
 				<v-col align="center" class="ml-13">
 					<v-row no-gutters>
 						<v-col>
-							<v-sheet rounded max-width="400" class="py-2 rounded-lg" color="element_background">
+							<v-sheet rounded max-width="340" class="pa-2 rounded-lg" color="element_background">
 								<v-row no-gutters>
 									<v-col cols="3">
 										<v-img max-width="50" max-height="50" src="@/assets/logo_without_back.png"/>
 									</v-col>
-									<v-col>
-										<h1>Энергия СГУГиТ</h1>
+									<v-col align-self="center">
+										<div class="head_text">Энергия СГУГиТ</div>
 									</v-col>
 								</v-row>
 							</v-sheet>
@@ -41,8 +40,10 @@
 </template>
 
 <script>
-export default {
+import UserMenu from "@/components/UserMenu"
 
+export default {
+	components: { UserMenu },
 }
 </script>
 
@@ -53,9 +54,14 @@ export default {
 	position: absolute;
 	background-size: cover;
 	background: #1D2E41;
+	position: inherit;
 }
 
 .main_div {
 	height: calc(100% - 64.52px);
+}
+
+.head_text {
+	font-size: 30px !important;
 }
 </style>

@@ -14,6 +14,13 @@ export default new Vuetify({
         element_background: "#EDEff5",
         second: "#1D2E41",
         accent: colors.green.lighten5,
+
+        menu_btn_1: "#3EA0D6",
+        menu_btn_2: "#49CA89",
+        menu_btn_3: "#BC5162",
+        menu_btn_4: "#DB6352",
+        menu_btn_5: "#7D2880",
+
       },
     },
   },
