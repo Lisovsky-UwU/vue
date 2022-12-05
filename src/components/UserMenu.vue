@@ -1,13 +1,19 @@
 <template>
   <div>
+		<v-btn 
+			color="second" 
+			rounded 
+			small 
+			class="edit_btn" 
+			absolute
+			to="/profile-settings" 
+		>
+			<v-icon color="white">mdi-lead-pencil</v-icon>
+		</v-btn>
+
 		<v-row no-gutters>
 			<v-col align="center">
-				<v-img class="ml-13" width="110" src="@/assets/default_avatar.png"/>
-			</v-col>
-			<v-col cols="3">
-				<v-btn color="second" rounded small>
-					<v-icon color="white">mdi-lead-pencil</v-icon>
-				</v-btn>
+				<v-img  width="110" src="@/assets/default_avatar.png"/>
 			</v-col>
 		</v-row>
 
@@ -30,6 +36,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_1"
+					to="/"
 				>
 					<v-icon left>mdi-newspaper</v-icon>
 					Главная
@@ -44,6 +51,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_2"
+					to="/create-entry"
 				>
 					<v-icon left>mdi-fountain-pen</v-icon>
 					Записаться
@@ -58,6 +66,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_3"
+					to="/coach-support"
 				>
 					<v-icon left>mdi-phone-in-talk</v-icon>
 					Связь с тренером
@@ -72,6 +81,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_4"
+					to="/support"
 				>
 					<v-icon left>mdi-headphones-settings</v-icon>
 					Поддержка
@@ -107,5 +117,7 @@ export default {
 </script>
 
 <style>
-
+.edit_btn {
+	left: 74%;
+}
 </style>
