@@ -1,5 +1,5 @@
 <template>
-  <v-content>
+  <div>
 		<v-row no-gutters>
 			<v-col align="center">
 				<v-img class="ml-13" width="110" src="@/assets/default_avatar.png"/>
@@ -93,7 +93,7 @@
 				</v-btn>
 			</v-col>
 		</v-row>
-	</v-content>
+	</div>
 </template>
 
 <script>
