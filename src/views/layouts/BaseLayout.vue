@@ -53,7 +53,10 @@ export default {
 	width: 100%;
 	position: absolute;
 	background-size: cover;
-	background: #1D2E41;
+	/* background: #1D2E41; */
+	background-size: cover;
+	background-position-y: 65%;
+	background-image: url("@/assets/login_back.jpg");
 	position: inherit;
 }
 

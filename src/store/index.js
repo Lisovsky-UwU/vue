@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import groups from '@/store/modules/groups'
 import authentication from '@/store/modules/authentication'
+import entries from '@/store/modules/entries'
+import ads from '@/store/modules/ads'
 
 Vue.use(Vuex)
 
@@ -14,5 +16,5 @@ export default new Vuex.Store({
   },
   actions: {
   },
-  modules: { groups, authentication }
+  modules: { groups, authentication, entries, ads }
 })
