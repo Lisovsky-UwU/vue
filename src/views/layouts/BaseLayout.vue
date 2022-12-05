@@ -66,5 +66,10 @@ export default {
 
 .head_text {
 	font-size: 30px !important;
+	font-weight: 300;
+}
+
+.background_color_second {
+	background: #1D2E41;
 }
 </style>

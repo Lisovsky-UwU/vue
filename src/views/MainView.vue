@@ -86,17 +86,5 @@ export default {
   background: linear-gradient(90deg, rgba(50,204,19,1) 0%, rgba(24,24,219,1) 30%, rgba(236,124,12,1) 70%, rgba(115,16,207,1) 100%);
   padding: 2px;
 	border-radius: 10px;
-
-
-	/* border: 4px solid; */
-	/* border-radius: 10px; */
-	/* border-color: red; */
-	/* border-color: linear-gradient(#e66465, #9198e5); */
-	/* border-image: 
-    linear-gradient(
-      
-      red, 
-      rgb(0, 0, 0)
-    ) 1 100%; */
 }
 </style>
