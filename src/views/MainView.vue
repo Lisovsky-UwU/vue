@@ -4,7 +4,7 @@
 			<v-col cols="12" md="6">
 				<v-card min-height="100%" outlined style="position: relative" class="rounded-lg mr-7" color="element_background">
 					<v-card-text>
-						<v-img width="300" src="@/assets/calendar-mock.png"/>
+						<!-- <v-img width="300" src="@/assets/calendar-mock.png"/> -->
 						<!-- <v-calendar
 							ref="calendar"
 							:weekdays="[1, 2, 3, 4, 5, 6, 0]"
@@ -19,7 +19,7 @@
 						>
 							<v-col>
 								<v-card color="second" class="rounded-lg">
-									<div class="py-3 white--text mt-4">
+									<div class="py-3 white--text mb-3">
 										{{ entry.weekday }}: {{ entry.time }}
 									</div>
 								</v-card>
