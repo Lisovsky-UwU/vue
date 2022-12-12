@@ -7,7 +7,11 @@ const routes = [
   {
     path: '/',
     component: () => import('@/views/MainView')
-  }
+  },
+  {
+    path: '/create-entry',
+    component: () => import('@/views/CreateEntryView')
+  },
 ]
 
 const router = new VueRouter({

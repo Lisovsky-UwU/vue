@@ -20,7 +20,8 @@ export default new Vuetify({
         menu_btn_3: "#BC5162",
         menu_btn_4: "#DB6352",
         menu_btn_5: "#7D2880",
-
+        
+        create_entry_btn: "#3EA0D6",
       },
     },
   },
