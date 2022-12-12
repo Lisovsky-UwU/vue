@@ -12,6 +12,14 @@ const routes = [
     path: '/create-entry',
     component: () => import('@/views/CreateEntryView')
   },
+  {
+    path: '/coach-support',
+    component: () => import('@/views/CoachSupportView')
+  },
+  {
+    path: '/support',
+    component: () => import('@/views/SupportView')
+  },
 ]
 
 const router = new VueRouter({
