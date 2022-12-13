@@ -16,7 +16,7 @@
 							<h2>
 								Раздел находится в разработке
 								<br>
-								По всем вопросам пишите на почту <a href="mailto:energycats@gmail.ru">energycats@gmail.ru</a>
+								По всем вопросам пишите на почту <a href="mailto:gym.energy.cats@gmail.com">gym.energy.cats@gmail.com</a>
 							</h2>
 						</v-col>
 					</v-row>
