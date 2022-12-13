@@ -118,29 +118,10 @@
 					</v-row>
 					<v-row no-gutters>
 						<v-col align="center">
-							<v-menu 
-								transition="scroll-y-transition" 
-								:close-on-content-click="false"
-								top
-								v-model="group_selector_vis"
-							>
-								<template v-slot:activator="{ on, attrs }">
-									<v-btn
-										color="primary"
-										class="mt-2 white--text"
-										v-bind="attrs"
-										v-on="on"
-									>
-										{{ selected_group }}
-									</v-btn>
-								</template>
-								<v-sheet width="300" max-height="300">
-									<GroupSelector 
-										@onSelectGroup="onUpdateGroup"
-										@close="group_selector_vis = false"
-									/>
-								</v-sheet>
-							</v-menu>
+							<GroupSelectorBtn 
+								:selected_group="selected_group"
+								@changeGroup="changeGroup"
+							/>
 						</v-col>
 					</v-row>
 					<v-row no-gutters>
@@ -171,7 +152,7 @@
 </template>
 
 <script>
-import GroupSelector from '@/components/ui/GroupSelector'
+import GroupSelectorBtn from '@/components/ui/GroupSelectorBtn'
 
 export default {
 	data: () => ({
@@ -182,7 +163,6 @@ export default {
 		valid_step_3: false,
 
 		registration_step: 1,
-		group_selector_vis: false,
 
 		stud_code: '',
 		password: '',
@@ -221,12 +201,11 @@ export default {
 
 			this.is_loading = false
 		},
-		onUpdateGroup(group) {
-			this.selected_group = group
-			this.group_selector_vis = false
+		changeGroup(new_group) {
+			this.selected_group = new_group
 		}
 	},
-	components: { GroupSelector }
+	components: { GroupSelectorBtn }
 }
 </script>
 

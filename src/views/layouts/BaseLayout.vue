@@ -28,7 +28,9 @@
 					<v-row no-gutters class="main_div">
 						<v-col>
 							<v-main style="height: 100%">
-								<router-view/>
+								<router-view
+									@messageShow="snackbarShow"
+								/>
 							</v-main>
 						</v-col>
 					</v-row>
@@ -36,6 +38,27 @@
 
 			</v-row>
 		</div>
+
+		<v-snackbar
+			v-model="snackbar_show"
+			:timeout="snackbar_timeout"
+			:color="snackbar_color"
+			top
+			right
+		>
+			{{ snackbar_text }}
+
+			<template v-slot:action="{ attrs }">
+				<v-btn
+					text
+					v-bind="attrs"
+					@click="snackbar_show = false"
+				>
+					Закрыть
+				</v-btn>
+			</template>
+		</v-snackbar>
+
 	</div>
 </template>
 
@@ -43,6 +66,20 @@
 import UserMenu from "@/components/UserMenu"
 
 export default {
+	data: () => ({
+		snackbar_show: false,
+		snackbar_timeout: 5000,
+		snackbar_text: '',
+		snackbar_color: '',
+  }),
+	methods: {
+		snackbarShow(text, color) {
+			this.snackbar_show = false
+			this.snackbar_text = text
+			this.snackbar_color = color
+			this.snackbar_show = true
+		}
+	},
 	components: { UserMenu },
 }
 </script>

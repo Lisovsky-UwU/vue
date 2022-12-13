@@ -29,26 +29,6 @@
 						/>
 					</template>
 				</v-row>
-
-				<v-snackbar
-					v-model="snackbar_show"
-					:timeout="snackbar_timeout"
-					:color="snackbar_color"
-					top
-					right
-				>
-					{{ snackbar_text }}
-		
-					<template v-slot:action="{ attrs }">
-						<v-btn
-							text
-							v-bind="attrs"
-							@click="snackbar_show = false"
-						>
-							Закрыть
-						</v-btn>
-					</template>
-				</v-snackbar>
 			</v-card-text>
 
 			<v-card-actions class="background_color_second" style="position:absolute; bottom:0; width: 100%;">
@@ -70,12 +50,6 @@ export default {
     selected_times: {},
 		selected_weekkdays: [],
 		select_is_limit: false,
-
-
-		snackbar_show: false,
-		snackbar_timeout: 5000,
-		snackbar_text: '',
-		snackbar_color: '',
   }),
 	
 	computed:{
@@ -98,9 +72,7 @@ export default {
 				}
 			}
 			else {
-				this.snackbar_show = true
-				this.snackbar_text = 'Выбрано максимальное количество дней'
-				this.snackbar_color = 'red'
+				this.$emit('messageShow', 'Выбрано максимальное количество дней', 'red')
 			}
 		},
 
@@ -114,9 +86,7 @@ export default {
 
 		commitEntries() {
 			console.log(this.selected_times)
-			this.snackbar_show = true
-			this.snackbar_text = 'Вы успешно записались'
-			this.snackbar_color = 'green'
+			this.$emit('messageShow', 'Вы успешно записались', 'green')
 		}
 	},
 }
