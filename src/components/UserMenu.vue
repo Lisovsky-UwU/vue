@@ -6,7 +6,7 @@
 			small 
 			class="edit_btn" 
 			absolute
-			to="/profile-settings" 
+			to="/lk/profile-settings" 
 		>
 			<v-icon color="white">mdi-lead-pencil</v-icon>
 		</v-btn>
@@ -36,7 +36,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_1"
-					to="/"
+					to="/lk"
 				>
 					<v-icon left>mdi-newspaper</v-icon>
 					Главная
@@ -51,7 +51,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_2"
-					to="/create-entry"
+					to="/lk/create-entry"
 				>
 					<v-icon left>mdi-fountain-pen</v-icon>
 					Записаться
@@ -66,7 +66,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_3"
-					to="/coach-support"
+					to="/lk/coach-support"
 				>
 					<v-icon left>mdi-phone-in-talk</v-icon>
 					Связь с тренером
@@ -81,7 +81,7 @@
 					height="40"
 					class="mt-4 white--text"
 					color="menu_btn_4"
-					to="/support"
+					to="/lk/support"
 				>
 					<v-icon left>mdi-headphones-settings</v-icon>
 					Поддержка

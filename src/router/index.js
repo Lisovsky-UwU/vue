@@ -5,25 +5,51 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    component: () => import('@/views/MainView')
+    path: '/lk',
+    component: () => import('@/views/LkView'),
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/MainView')
+      },
+      {
+        path: 'create-entry',
+        component: () => import('@/views/CreateEntryView')
+      },
+      {
+        path: 'coach-support',
+        component: () => import('@/views/CoachSupportView')
+      },
+      {
+        path: 'support',
+        component: () => import('@/views/SupportView')
+      },
+      {
+        path: 'profile-settings',
+        component: () => import('@/views/ProfileSettingsView')
+      }, 
+    ],
   },
-  {
-    path: '/create-entry',
-    component: () => import('@/views/CreateEntryView')
-  },
-  {
-    path: '/coach-support',
-    component: () => import('@/views/CoachSupportView')
-  },
-  {
-    path: '/support',
-    component: () => import('@/views/SupportView')
-  },
-  {
-    path: '/profile-settings',
-    component: () => import('@/views/ProfileSettingsView')
-  },
+  // {
+  //   path: '/',
+  //   component: () => import('@/views/MainView')
+  // },
+  // {
+  //   path: '/create-entry',
+  //   component: () => import('@/views/CreateEntryView')
+  // },
+  // {
+  //   path: '/coach-support',
+  //   component: () => import('@/views/CoachSupportView')
+  // },
+  // {
+  //   path: '/support',
+  //   component: () => import('@/views/SupportView')
+  // },
+  // {
+  //   path: '/profile-settings',
+  //   component: () => import('@/views/ProfileSettingsView')
+  // },
 ]
 
 const router = new VueRouter({

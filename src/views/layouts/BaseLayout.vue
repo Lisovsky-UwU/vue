@@ -94,7 +94,6 @@ export default {
 	background-size: cover;
 	background-position-y: 65%;
 	background-image: url("@/assets/login_back.jpg");
-	position: inherit;
 }
 
 .main_div {
