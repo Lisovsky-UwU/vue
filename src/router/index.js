@@ -20,6 +20,10 @@ const routes = [
     path: '/support',
     component: () => import('@/views/SupportView')
   },
+  {
+    path: '/profile-settings',
+    component: () => import('@/views/ProfileSettingsView')
+  },
 ]
 
 const router = new VueRouter({
