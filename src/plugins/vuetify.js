@@ -12,6 +12,7 @@ export default new Vuetify({
         primary: colors.green,
         background: "#8595BE",
         element_background: "#EDEff5",
+        second_element_background: "#616D7A",
         second: "#1D2E41",
         accent: colors.green.lighten5,
 
