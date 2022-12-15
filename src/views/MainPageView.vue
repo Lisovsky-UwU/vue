@@ -25,6 +25,7 @@
 			<v-btn 
 				text
 				class="mx-5"
+				to="/lk"
 			>
 				Личный кабинет
 			</v-btn>

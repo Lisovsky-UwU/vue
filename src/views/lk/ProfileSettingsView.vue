@@ -52,6 +52,7 @@
 						</v-col>
 						<v-col>
 							<v-text-field 
+								v-if="user_data.status != 'Тренер'"
 								class="mt-2 mx-3"
 								label="Номер студенческого билета"
 								readonly
@@ -61,13 +62,15 @@
 					</v-row>
 					<v-row no-gutters>
 						<v-col>
-							<div class="mt-1">
-								Группа:
-							</div>
-							<GroupSelectorBtn 
-								:selected_group="usergroup"
-								@changeGroup="changeGroup"
-							/>
+							<template v-if="user_data.status != 'Тренер'">
+								<div class="mt-1">
+									Группа:
+								</div>
+								<GroupSelectorBtn 
+									:selected_group="usergroup"
+									@changeGroup="changeGroup"
+								/>
+							</template>
 						</v-col>
 						<v-col>
 							<div class="mt-1">
@@ -156,23 +159,24 @@
 
 <script>
 import GroupSelectorBtn from '@/components/ui/GroupSelectorBtn.vue'
+import {mapGetters} from 'vuex'
 
 export default {
 	data: () => ({
 		valid: false,
 		is_loading: false,
 
-		firstname: 'Иванов',
-		secondname: 'Иван',
-		patronymic: 'Иванович',
+		firstname: '',
+		secondname: '',
+		patronymic: '',
 
-		stud_code: '12345678',
+		stud_code: '',
 
 		old_password: '',
 		new_password: '',
 		repeat_new_password: '',
 		
-		usergroup: 'БИ-22',
+		usergroup: '',
 
 		required_field_rule: v => !!v || 'Поле обязательно',
 		password_field_rule: v => ( v.length >= 8 && v.length <= 64 ) || 'Допустимая длина от 8 до 64 символов',
@@ -185,7 +189,18 @@ export default {
 			this.$emit('messageShow', 'Функция находится в разработке', 'warning')
 		},
 	},
+	computed:{
+    // ...mapGetters(['user_data']),
+  },
 	components: { GroupSelectorBtn },
+	mounted() {
+		this.firstname = this.user_data.firstname
+		this.secondname = this.user_data.secondname
+		this.patronymic = this.user_data.patronymic
+		this.usergroup = this.user_data.group
+		this.stud_code = this.user_data.stud_code
+	},
+	props: [ 'user_data' ]
 }
 </script>
 

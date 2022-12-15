@@ -5,7 +5,7 @@
 
 				<v-card width="250" min-height="100%" outlined style="position: relative" class="rounded-lg" color="element_background">
 					<v-card-text>
-						<UserMenu/>
+						<UserMenu :user_data="user_data"/>
 					</v-card-text>
 				</v-card>				
 
@@ -13,6 +13,7 @@
 					<v-row no-gutters>
 						<v-col>
 							<v-sheet rounded max-width="340" class="pa-2 rounded-lg" color="element_background">
+							<router-link to="/" style="text-decoration: none;" class="black--text">
 								<v-row no-gutters>
 									<v-col cols="3">
 										<v-img max-width="50" max-height="50" src="@/assets/logo_without_back.png"/>
@@ -21,6 +22,7 @@
 										<div class="head_text">Энергия СГУГиТ</div>
 									</v-col>
 								</v-row>
+							</router-link>
 							</v-sheet>
 						</v-col>
 					</v-row>
@@ -30,6 +32,7 @@
 							<v-main style="height: 100%">
 								<router-view
 									@messageShow="snackbarShow"
+									:user_data="user_data"
 								/>
 							</v-main>
 						</v-col>
@@ -64,6 +67,7 @@
 
 <script>
 import UserMenu from "@/components/UserMenu"
+import {mapGetters} from 'vuex'
 
 export default {
 	data: () => ({
@@ -80,6 +84,12 @@ export default {
 			this.snackbar_show = true
 		}
 	},
+	created() {
+		this.$store.dispatch('fetchUserData')
+	},
+	computed:{
+    ...mapGetters(['user_data']),
+  },
 	components: { UserMenu },
 }
 </script>
