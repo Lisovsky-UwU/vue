@@ -6,6 +6,7 @@ import entries from '@/store/modules/entries'
 import ads from '@/store/modules/ads'
 import news from '@/store/modules/news'
 import user_data from '@/store/modules/user_data'
+import student_visits from '@/store/modules/student_visits'
 
 Vue.use(Vuex)
 
@@ -18,5 +19,5 @@ export default new Vuex.Store({
   },
   actions: {
   },
-  modules: { groups, authentication, entries, ads, news, user_data }
+  modules: { groups, authentication, entries, ads, news, user_data, student_visits }
 })
