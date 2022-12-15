@@ -91,5 +91,20 @@ export default {
 
 			context.commit('setAbailableTimeList', available_time_list)
 		},
+
+		fetchAllEntriesOfDay(context, day) {
+			const stArr = [
+				'Иванов Иван Иванович', 'Иванов Иван Иванович', 'Иванов Иван Иванович',
+				'Иванов Иван Иванович', 'Иванов Иван Иванович', 'Иванов Иван Иванович',
+				'Иванов Иван Иванович', 'Иванов Иван Иванович', 'Иванов Иван Иванович',
+				'Иванов Иван Иванович', 'Иванов Иван Иванович', 'Иванов Иван Иванович',
+			]
+			return [
+				{ time: '16:00', students: stArr },
+				{ time: '17:30', students: stArr },
+				{ time: '19:00', students: stArr },
+				{ time: '20:30', students: stArr },
+			]
+		}
 	}
 }

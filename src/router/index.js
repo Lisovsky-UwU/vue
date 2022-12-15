@@ -37,7 +37,19 @@ const routes = [
         component: () => import('@/views/lk/StudentsChat')
       },
       {
-        path: 'student-list'
+        path: 'student-list',
+        component: () => import('@/views/lk/StudentList'),
+        children: [
+          {
+            path: '',
+            component: () => import('@/views/lk/StudentListSelectDay'),
+          },
+          {
+            path: ':weekday',
+            component: () => import('@/views/lk/StudentListDay'),
+            props: true,
+          },
+        ]
       },
     ],
   },
