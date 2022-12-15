@@ -157,7 +157,7 @@
 					<v-card-actions 
 						v-if="user_data.status == 'Тренер'"
 						class="background_color_second"
-						
+						style="position: absolute; bottom: 0; width: 100%"
 					>
 						<v-text-field
 							dense
