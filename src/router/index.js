@@ -32,6 +32,13 @@ const routes = [
         path: 'profile-settings',
         component: () => import('@/views/lk/ProfileSettingsView')
       }, 
+      {
+        path: 'students-chat',
+        
+      },
+      {
+        path: 'student-list'
+      },
     ],
   },
 ]

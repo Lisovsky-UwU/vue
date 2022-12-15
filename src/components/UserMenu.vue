@@ -13,18 +13,20 @@
 
 		<v-row no-gutters>
 			<v-col align="center">
-				<v-img  width="110" src="@/assets/default_avatar.png"/>
+				<v-img v-if="user_data.status == 'Тренер'"  width="110" src="@/assets/coach_avatar.png"/>
+				<v-img v-else  width="110" src="@/assets/default_avatar.png"/>
 			</v-col>
 		</v-row>
 
 		<v-row no-gutters>
 			<v-col align="center">
 				<div class="body-1 mt-4">
-					Иванов Иван Иванович
+					{{ user_data.firstname }} {{ user_data.secondname }} {{ user_data.patronymic }}
 					<br>
-					Группа: БИ-32.1
-					<br>
-					Статус: Студент
+					<div v-if="user_data.status != 'Тренер'">
+						Группа: {{ user_data.group }}
+					</div>
+					Статус: {{ user_data.status }}
 				</div>
 			</v-col>
 		</v-row>
@@ -47,6 +49,19 @@
 		<v-row no-gutters>
 			<v-col align="center">
 				<v-btn 
+					v-if="user_data.status == 'Тренер'"
+					block
+					height="40"
+					class="mt-4 white--text"
+					color="menu_btn_2"
+					to="/lk/student-list"
+				>
+					<v-icon left>mdi-file-document-edit</v-icon>
+					Списки
+				</v-btn>
+
+				<v-btn 
+					v-else
 					block
 					height="40"
 					class="mt-4 white--text"
@@ -62,6 +77,19 @@
 		<v-row no-gutters>
 			<v-col align="center">
 				<v-btn 
+					v-if="user_data.status == 'Тренер'"
+					block
+					height="40"
+					class="mt-4 white--text"
+					color="menu_btn_3"
+					to="/lk/students-chat"
+				>
+					<v-icon left>mdi-phone-in-talk</v-icon>
+					Чат со студентами
+				</v-btn>
+
+				<v-btn 
+					v-else
 					block
 					height="40"
 					class="mt-4 white--text"
@@ -108,6 +136,7 @@
 
 <script>
 export default {
+	props: [ 'user_data' ],
 	methods: {
 		logout() {
 			this.$store.commit('singOut')
