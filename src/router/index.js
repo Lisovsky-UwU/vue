@@ -34,7 +34,7 @@ const routes = [
       }, 
       {
         path: 'students-chat',
-        
+        component: () => import('@/views/lk/StudentsChat')
       },
       {
         path: 'student-list'

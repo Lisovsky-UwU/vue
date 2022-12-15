@@ -85,7 +85,7 @@
 					to="/lk/students-chat"
 				>
 					<v-icon left>mdi-phone-in-talk</v-icon>
-					Чат со студентами
+					Чаты со студентами
 				</v-btn>
 
 				<v-btn 
